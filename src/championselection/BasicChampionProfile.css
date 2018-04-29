@@ -11,3 +11,7 @@
   border-style: none;
   padding: 0;
 }
+
+.BasicChampionProfile-button:focus{
+  outline:0;
+}
