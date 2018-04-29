@@ -9,44 +9,42 @@ class ChampionNames extends Component {
     super();
 
     this.state = {
-      names: []
+      descriptions: []
     };
   }
 
   componentDidMount() {
     var championData = retrieveChampionData();
     var championKeys = Object.keys(championData.data);
-    var championNames = [];
-    for (var i = 0; i < championKeys.length; i++) {
-      championNames.push(championData.data[championKeys[i]].name);
-    }
+    championKeys.sort(function(championA, championB) {
+      var championNameA = championData.data[championA].name;
+      var championNameB = championData.data[championB].name;
+      if (championNameA < championNameB) return -1;
+      if (championNameA > championNameB) return 1;
+      return 0;
+    });
+    var championDescriptions = championKeys.map((key) =>
+      <p key={key}>{championData.data[key].name + ", " + championData.data[key].title}</p>
+    );
+
     this.setState({
-      names: championNames
+      descriptions: championDescriptions
     });
   }
 
   render() {
-    var orderedChampionNames = createAlphabeticallyOrderedList(this.state.names);
-
     return (
       <div className="ChampionNames">
         <header className="ChampionNames-header">
-          <h1 className="ChampionNames-title">Champion Names</h1>
+          <h1 className="ChampionNames-title">Champions</h1>
         </header>
         <div className="ChampionNames-names">
-          <ul>{orderedChampionNames}</ul>
+          <ul>{this.state.descriptions}</ul>
         </div>
       </div>
     );
   }
 
-}
-
-function createAlphabeticallyOrderedList(names) {
-  names.sort();
-  return names.map((name) =>
-    <p key={name}>{name}</p>
-  );
 }
 
 function retrieveChampionData() {
