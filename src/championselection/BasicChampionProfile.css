@@ -5,3 +5,9 @@
 .BasicChampionProfile-name{
     text-align: center;
 }
+
+.BasicChampionProfile-button{
+  background: none;
+  border-style: none;
+  padding: 0;
+}

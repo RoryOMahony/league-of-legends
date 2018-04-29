@@ -31,12 +31,17 @@ class ChampionSelection extends Component {
             championName = {championData.data[key].name}
             imageFileName = {championData.data[key].image.full}
             patchNumber = {patchNumber}
+            onClick= {() => this.handleClick(championData.data[key].name)}
         />
     );
 
     this.setState({
       championProfiles: championProfiles
     });
+  }
+
+  handleClick(name){
+    console.log("Selected: " + name);
   }
 
   render() {
