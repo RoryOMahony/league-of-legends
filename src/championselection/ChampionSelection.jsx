@@ -3,13 +3,13 @@ import React, {
 } from 'react';
 import './ChampionSelection.css';
 import championData from '../data/AllChampionData.json'
-import BasicChampionProfile from './BasicChampionProfile';
+import BasicChampionProfile from './BasicChampionProfile.jsx';
 
 class ChampionSelection extends Component {
 
-  constructor(props){
+  constructor(props) {
     super();
-    this.state={
+    this.state = {
       championProfiles: []
     };
   }
@@ -27,7 +27,7 @@ class ChampionSelection extends Component {
     });
 
     var championProfiles = championKeys.map((key) =>
-        <BasicChampionProfile key={key} className="ChampionSelection-profile"
+      <BasicChampionProfile key={key} className="ChampionSelection-profile"
             championName = {championData.data[key].name}
             imageFileName = {championData.data[key].image.full}
             patchNumber = {patchNumber}
@@ -40,13 +40,13 @@ class ChampionSelection extends Component {
     });
   }
 
-  handleClick(name){
+  handleClick(name) {
     console.log("Selected: " + name);
   }
 
   render() {
     return (
-        <div className="ChampionSelection-profiles">
+      <div className="ChampionSelection-profiles">
           {this.state.championProfiles}
         </div>
     );

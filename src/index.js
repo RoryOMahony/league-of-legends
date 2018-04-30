@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import HeaderBar from './headerbar/HeaderBar';
-import NavigationBar from './navigationbar/NavigationBar';
-import ChampionProfileImage from './championimage/ChampionProfileImage';
-import ChampionNames from './championnames/ChampionNames';
-import ChampionSelection from './championselection/ChampionSelection';
+import HeaderBar from './headerbar/HeaderBar.jsx';
+import NavigationBar from './navigationbar/NavigationBar.jsx';
+import ChampionProfileImage from './championimage/ChampionProfileImage.jsx';
+import ChampionNames from './championnames/ChampionNames.jsx';
+import ChampionSelection from './championselection/ChampionSelection.jsx';
 
 ReactDOM.render(<HeaderBar />, document.getElementById('headerBar'));
 ReactDOM.render(<NavigationBar />, document.getElementById('navigationBar'));
