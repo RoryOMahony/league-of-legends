@@ -1,0 +1,17 @@
+.BasicChampionProfile-profile{
+  float: left;
+}
+
+.BasicChampionProfile-name{
+    text-align: center;
+}
+
+.BasicChampionProfile-button{
+  background: none;
+  border-style: none;
+  padding: 0;
+}
+
+.BasicChampionProfile-button:focus{
+  outline:0;
+}
