@@ -1,6 +1,7 @@
 import React, {
   Component
 } from 'react';
+import { Link } from "react-router-dom";
 import './BasicChampionProfile.css';
 import ChampionProfileImage from '../championimage/ChampionProfileImage';
 
@@ -8,7 +9,7 @@ class BasicChampionProfile extends Component {
 
   render() {
     return (
-      <button className="BasicChampionProfile-button" onClick={this.props.onClick}>
+      <Link className="BasicChampionProfile-link" to={`/champions/${this.props.championName}`}>
         <div className="BasicChampionProfile-profile">
           <ChampionProfileImage
               championName={this.props.championName}
@@ -17,7 +18,7 @@ class BasicChampionProfile extends Component {
           />
           <p className="BasicChampionProfile-name">{this.props.championName}</p>
         </div>
-        </button>
+      </Link>
     );
   }
 

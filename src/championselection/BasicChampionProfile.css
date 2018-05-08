@@ -1,17 +1,22 @@
-.BasicChampionProfile-profile{
+.BasicChampionProfile-profile {
   float: left;
 }
 
-.BasicChampionProfile-name{
-    text-align: center;
-}
-
-.BasicChampionProfile-button{
-  background: none;
-  border-style: none;
+.BasicChampionProfile-link {
+  float: left;
   padding: 0;
 }
 
-.BasicChampionProfile-button:focus{
-  outline:0;
+.BasicChampionProfile-link:not(.activeLink):hover {
+  background-color: white;
+  cursor: auto;
+}
+
+.BasicChampionProfile-name {
+  text-align: center;
+  color: black;
+}
+
+.BasicChampionProfile-button:focus {
+  outline: 0;
 }
