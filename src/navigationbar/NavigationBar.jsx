@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./NavigationBar.css";
 
-class NaviagationBar extends Component {
-  render() {
+const NaviagationBar = () => {
     return (
       <ul className="navigation-list">
         <li className="navigation-item">
@@ -18,7 +17,6 @@ class NaviagationBar extends Component {
         </li>
       </ul>
     );
-  }
 }
 
 export default NaviagationBar;

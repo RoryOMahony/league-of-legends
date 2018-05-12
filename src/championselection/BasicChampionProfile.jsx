@@ -5,22 +5,20 @@ import { Link } from "react-router-dom";
 import './BasicChampionProfile.css';
 import ChampionProfileImage from '../championimage/ChampionProfileImage';
 
-class BasicChampionProfile extends Component {
+const BasicChampionProfile = ({championName, imageFileName, patchNumber}) => {
 
-  render() {
     return (
-      <Link className="BasicChampionProfile-link" to={`/champions/${this.props.championName}`}>
+      <Link className="BasicChampionProfile-link" to={`/champions/${championName}`}>
         <div className="BasicChampionProfile-profile">
           <ChampionProfileImage
-              championName={this.props.championName}
-              imageFileName={this.props.imageFileName}
-              patchNumber={this.props.patchNumber}
+              championName={championName}
+              imageFileName={imageFileName}
+              patchNumber={patchNumber}
           />
-          <p className="BasicChampionProfile-name">{this.props.championName}</p>
+          <p className="BasicChampionProfile-name">{championName}</p>
         </div>
       </Link>
     );
-  }
 
 }
 

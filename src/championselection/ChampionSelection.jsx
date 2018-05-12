@@ -9,12 +9,7 @@ class ChampionSelection extends Component {
 
   constructor(props) {
     super();
-    this.state = {
-      championProfiles: []
-    };
-  }
 
-  componentDidMount() {
     var patchNumber = championData.version;
 
     var championKeys = Object.keys(championData.data);
@@ -26,7 +21,7 @@ class ChampionSelection extends Component {
       return 0;
     });
 
-    var championProfiles = championKeys.map((key) =>
+    this.championProfiles = championKeys.map((key) =>
       <BasicChampionProfile key={key} className="ChampionSelection-profile"
             championName = {championData.data[key].name}
             imageFileName = {championData.data[key].image.full}
@@ -34,20 +29,12 @@ class ChampionSelection extends Component {
             onClick= {() => this.handleClick(championData.data[key].name)}
         />
     );
-
-    this.setState({
-      championProfiles: championProfiles
-    });
-  }
-
-  handleClick(name) {
-    console.log("Selected: " + name);
   }
 
   render() {
     return (
       <div className="ChampionSelection-profiles">
-          {this.state.championProfiles}
+          {this.championProfiles}
         </div>
     );
   }

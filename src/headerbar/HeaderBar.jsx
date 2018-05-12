@@ -4,8 +4,7 @@ import React, {
 import logo from './logo.svg';
 import './HeaderBar.css';
 
-class HeaderBar extends Component {
-  render() {
+const HeaderBar = () => {
     return (
       <div className="HeaderBar">
         <header className="HeaderBar-header">
@@ -14,7 +13,6 @@ class HeaderBar extends Component {
         </header>
       </div>
     );
-  }
 }
 
 export default HeaderBar;
