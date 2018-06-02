@@ -15,6 +15,21 @@ const NaviagationBar = () => {
             Champions
           </Link>
         </li>
+        <li className="navigation-item">
+          <Link className="navigation-link" to="/items">
+            Items
+          </Link>
+        </li>
+        <li className="navigation-item">
+          <Link className="navigation-link" to="/championBuilder">
+            Champion Builder
+          </Link>
+        </li>
+        <li className="navigation-item">
+          <Link className="navigation-link" to="/championComparison">
+            Champion Comparison
+          </Link>
+        </li>
       </ul>
     );
 }
